@@ -161,22 +161,21 @@ body.menu-open {
 .hero {
   display: flex;
   align-items: center;
-  min-height: 510px;
-  background-image: url("../images/promo-banner-bg@1x.webp");
+  justify-content: center;
+  width: 100%;
+  max-width: 1280px;  
+  height: 720px;      
+  margin: 0 auto;
+  background-image: url("../images/florist-boutique@1x.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-@media (min-resolution: 192dpi) {
-  .hero {
-    background-image: url("../images/promo-banner-bg@2x.webp");
-  }
-}
-
 .hero-section {
   padding-top: 64px;
   padding-bottom: 64px;
+  width: 100%;
 }
 
 .hero-title {
@@ -196,7 +195,7 @@ body.menu-open {
 }
 
 /* ===========================
-   ABOUT
+   ABOUT 
 =========================== */
 
 .about-section {
@@ -226,10 +225,13 @@ body.menu-open {
   line-height: 1.5;
 }
 
-.about-img {
+.about-img,
+img[src*="snowy-peony-cluster"] {
+  width: 100%;
+  max-width: 600px;  /* Вимога: 600px */
+  height: 428px;     /* Вимога: 428px */
   border-radius: 16px;
   object-fit: cover;
-  width: 100%;
 }
 
 /* ===========================
@@ -264,8 +266,11 @@ body.menu-open {
 }
 
 .top-selling-img {
+  width: 405px;
+  height: 320px;
   border-radius: 16px;
   margin-bottom: 16px;
+  object-fit: cover; 
 }
 
 .top-selling-title {
@@ -277,7 +282,7 @@ body.menu-open {
   margin-bottom: 16px;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--text-color);
+  color: var(--primary-text);
 }
 
 .pagination-dots {
@@ -372,10 +377,14 @@ body.menu-open {
 
 .bouquet-card {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
 .bouquet-img {
-  width: 100%;
+  width: 296px;
+  height: 296px;
   border-radius: 16px;
   margin-bottom: 16px;
   object-fit: cover;
@@ -392,7 +401,7 @@ body.menu-open {
   text-align: center;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--text-color);
+  color: var(--primary-text);
 }
 
 .bouquet-price {
@@ -656,16 +665,33 @@ body.menu-open {
 
 @media screen and (min-width: 768px) {
 
-  /* HEADER */
+  /* HEADER & NAVIGATION */
   .head-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto; 
+    align-items: center;
     padding-top: 12px;
     padding-bottom: 12px;
   }
 
+  .navigation {
+    display: flex;
+    justify-content: center; /* Центрує весь блок з меню */
+    width: 100%;
+  }
+
+  .header-nav-list {
+    display: flex;
+    justify-content: center; /* Центрує пункти меню */
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+  }
+
   .header-btn {
     display: block;
-    margin-left: auto;
-    margin-right: 24px;
+    margin-left: 0;
+    justify-self: end;
   }
 
   .header-link {
@@ -678,19 +704,10 @@ body.menu-open {
   }
   
   .menu-btn {
-    display: none; /* Ховаємо бургер на планшетах */
+    display: none;
   }
 
-  .navigation {
-    display: block;
-  }
-
-  .header-nav-list {
-    display: flex;
-    gap: 20px;
-  }
-
-  /* HERO */
+  /* HERO (Для планшетів) */
   .hero-section {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -720,9 +737,10 @@ body.menu-open {
     flex: 1;
   }
 
-  .about-img {
-    width: 340px;
-    height: auto;
+  .about-img,
+  img[src*="snowy-peony-cluster"] {
+    width: 600px;  /* Точний розмір для середніх та великих екранів */
+    height: 428px;
   }
 
   /* TOP SELLING */
@@ -735,6 +753,7 @@ body.menu-open {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px;
+    justify-content: center;
   }
 
   .bestsellers-list li:nth-child(2) {
@@ -742,17 +761,13 @@ body.menu-open {
   }
 
   .bestsellers-list .card {
-    flex: 1;
-    min-width: 280px;
-  }
-
-  .top-selling-img {
-    width: 100%;
+    width: 405px;
   }
 
   /* BOUQUETS */
   .bouquet-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшеті */
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
   }
 
   /* FEEDBACK */
@@ -802,7 +817,7 @@ body.menu-open {
 
 @media screen and (min-width: 1440px) {
   
-  /* HEADER */
+  /* HEADER NAVIGATION */
   .header-nav-list {
     gap: 40px;
   }
@@ -818,23 +833,19 @@ body.menu-open {
     gap: 80px;
   }
 
-  .about-img {
-    width: 480px;
-  }
-
   /* TOP SELLING */
   .bestsellers-list li:nth-child(3) {
-    display: block; /* Показуємо всі 3 картки на ПК */
+    display: block;
   }
 
   /* BOUQUETS */
   .bouquet-list {
-    grid-template-columns: repeat(4, 1fr); /* 4 колонки на ПК */
+    grid-template-columns: repeat(4, 1fr); /* На десктопі 4 букети в ряд, кожен 296x296px */
   }
 
   /* FEEDBACK */
   .feedback-list li:nth-child(3) {
-    display: flex; /* Усі 3 відгуки на ПК */
+    display: flex;
   }
 
   /* CONNECT */
