@@ -1,11 +1,15 @@
 :root {
-  --palette-brand-main: #335c49;
-  --palette-accent-ochre: #d17b49;
-  --palette-bg-light: #fbf9f6;
-  --palette-bg-dark: #1b2e24;
-  --palette-text-base: #222222;
-  --palette-text-muted: #555555;
-  --palette-border-soft: #e5e0da;
-  --palette-white: #ffffff;
-  --transition-standard: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --primary-bg: #ffffff;
+  --primary-text: #030c01;
+  --footer-bg: #eeee60;
+
+  --btn-gradient-start: #e8e81c;
+  --btn-gradient-end: #42ed13;
+  --btn-clicked-bg: #4e544d;
+  --btn-clicked-text: #ffffff;
+
+  --pagination-btn-hover: #d9fbcf;
+  --pagination-btn-active: #7af259;
+  
+  --text-color: #030c01; 
 }
