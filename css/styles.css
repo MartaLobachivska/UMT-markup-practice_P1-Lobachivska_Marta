@@ -66,7 +66,7 @@ body.menu-open {
 
   cursor: pointer;
 
-  font-size: 16px;
+  font-size: var(--font-button);
   font-weight: 500;
   line-height: 1.5;
 
@@ -82,8 +82,11 @@ body.menu-open {
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+} 
 
+
+
+ 
 .primary-btn:hover,
 .primary-btn:focus-visible {
   opacity: 0.8;
@@ -141,7 +144,10 @@ body.menu-open {
   height: auto;
 }
 
-.header-nav-list,
+.header-nav-list{
+  display: none;
+}
+
 .header-btn {
   display: none;
 }
@@ -163,7 +169,6 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 720px;      
   margin: 0 auto;
   background-image: url("../images/promo-banner-bg@1x.webp");
   background-repeat: no-repeat;
@@ -224,117 +229,155 @@ body.menu-open {
   line-height: 1.5;
 }
 
-.about-img,
-img[src*="snowy-peony-cluster"] {
-  width: 100%;
-  max-width: 600px;  /* Вимога: 600px */
-  height: 428px;     /* Вимога: 428px */
-  border-radius: 16px;
+.about-img {
   object-fit: cover;
+  width: 335px;
+  height: 428px;
+  border-radius: 16px;
 }
 
 /* ===========================
    TOP SELLING
 =========================== */
 
-.sell-section {
-  padding-top: 64px;
-  padding-bottom: 64px;
+.sell-section{
+
+padding-top:64px;
+padding-bottom:64px;
+
 }
 
-.sell-title {
-  margin-bottom: 32px;
-  font-size: 34px;
-  line-height: 1.2;
+.sell-title{
+
+margin-bottom:32px;
+
+font-size:34px;
+line-height:1.2;
+
 }
 
-.bestsellers-wrapper {
-  margin-bottom: 42px;
+.bestsellers-wrapper{
+
+margin-bottom:42px;
+
 }
 
-.bestsellers-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 24px;
+.bestsellers-list{
+
+display:flex;
+justify-content:center;
+gap:24px;
+
 }
 
 .bestsellers-list li:nth-child(2),
-.bestsellers-list li:nth-child(3) {
-  display: none;
+.bestsellers-list li:nth-child(3){
+
+display:none;
+
 }
 
-.top-selling-img {
-  width: 405px;
-  height: 320px;
-  border-radius: 16px;
-  margin-bottom: 16px;
-  object-fit: cover; 
+.top-selling-img{
+
+border-radius:16px;
+margin-bottom:16px;
+width: 335px;
+height: 320px;
+object-fit:cover; 
 }
 
-.top-selling-title {
-  margin-bottom: 8px;
+.top-selling-title{
+
+margin-bottom:8px;
+
 }
 
 .top-selling-text {
   margin-top: 8px;
   margin-bottom: 16px;
+
   font-size: 16px;
   line-height: 1.5;
-  color: var(--primary-text);
+
+  color: var(--text-color);
 }
 
-.pagination-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 24px;
+
+.pagination-dots{
+
+display:flex;
+justify-content:center;
+gap:8px;
+
+margin-bottom:24px;
+
 }
 
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #d1d1d1;
+.dot{
+
+width:8px;
+height:8px;
+
+border-radius:50%;
+
+background:#d1d1d1;
+
 }
 
-.dot.active {
-  background: #000;
+.dot.active{
+
+background:#000;
+
 }
 
-.btn-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  gap: 16px;
+.btn-wrapper{
+
+display:flex;
+justify-content:flex-end;
+gap:16px;
+
 }
 
-.pagination-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 100px;
-  border: 1px solid rgba(3, 12, 1, .15);
-  background: var(--primary-bg);
-  cursor: pointer;
-  transition:
-    background-color 250ms cubic-bezier(.4, 0, .2, 1),
-    border-color 250ms cubic-bezier(.4, 0, .2, 1);
+.pagination-btn{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+width:48px;
+height:48px;
+
+border-radius:100px;
+border:1px solid rgba(3,12,1,.15);
+
+background:var(--primary-bg);
+
+cursor:pointer;
+
+transition:
+background-color 250ms cubic-bezier(.4,0,.2,1),
+border-color 250ms cubic-bezier(.4,0,.2,1);
+
 }
 
 .pagination-btn:hover,
-.pagination-btn:focus-visible {
-  background: var(--pagination-btn-hover);
+.pagination-btn:focus-visible{
+
+background:var(--pagination-btn-hover);
+
 }
 
-.pagination-btn:active {
-  background: var(--pagination-btn-active);
+.pagination-btn:active{
+
+background:var(--pagination-btn-active);
+
 }
 
-.pagination-icon {
-  width: 24px;
-  height: 24px;
+.pagination-icon{
+
+width:24px;
+height:24px;
+
 }
 
 /* ===========================
@@ -476,6 +519,7 @@ img[src*="snowy-peony-cluster"] {
 
 .connect-info {
   margin-bottom: 32px;
+  display: flex;
 }
 
 .connect-tagline {
@@ -493,9 +537,10 @@ img[src*="snowy-peony-cluster"] {
   margin-bottom: 32px;
   font-size: 18px;
   line-height: 1.5;
+  width: 340px;
 }
 
-.conection-contacts {
+.connection-contacts {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -666,31 +711,40 @@ img[src*="snowy-peony-cluster"] {
 
   /* HEADER & NAVIGATION */
   .head-container {
-    display: grid;
+    /* display: grid;
     grid-template-columns: auto 1fr auto; 
+    align-items: center; */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding-top: 12px;
     padding-bottom: 12px;
   }
 
-  .navigation {
+  /* .navigation {
     display: flex;
-    justify-content: center; /* Центрує весь блок з меню */
+    justify-content: center; 
     width: 100%;
+  } */
+
+  .navigation {
+    width: auto;
+    margin-left: auto;
   }
 
   .header-nav-list {
-    display: flex;
-    justify-content: center; /* Центрує пункти меню */
+    display: none;
+    /* justify-content: center; 
     align-items: center;
     gap: 20px;
-    margin: 0 auto;
+    margin: 0 auto; */
   }
 
+  
   .header-btn {
     display: block;
-    margin-left: 0;
-    justify-self: end;
+    margin-left: auto;
+    margin-right: 24px;
   }
 
   .header-link {
@@ -702,9 +756,7 @@ img[src*="snowy-peony-cluster"] {
     opacity: .6;
   }
   
-  .menu-btn {
-    display: none;
-  }
+  
 
   /* HERO (Для планшетів) */
   .hero-section {
@@ -736,9 +788,9 @@ img[src*="snowy-peony-cluster"] {
     flex: 1;
   }
 
-  .about-img,
+  /* .about-img,
   img[src*="snowy-peony-cluster"] {
-    width: 600px;  /* Точний розмір для середніх та великих екранів */
+    width: 340px; 
     height: 428px;
   }
 
@@ -749,24 +801,27 @@ img[src*="snowy-peony-cluster"] {
   }
 
   .bestsellers-list {
-    flex-direction: row;
-    flex-wrap: wrap;
     gap: 24px;
-    justify-content: center;
   }
 
   .bestsellers-list li:nth-child(2) {
     display: block;
   }
 
-  .bestsellers-list .card {
-    width: 405px;
+  .top-selling-img {
+    width: 340px;
   }
 
-  /* BOUQUETS */
+    /* BOUQUETS */
+
+  .bouquet-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
   .bouquet-list {
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
+    gap: 24px;
   }
 
   /* FEEDBACK */
@@ -784,29 +839,32 @@ img[src*="snowy-peony-cluster"] {
 
   /* CONNECT */
   .connect-section .container {
-    display: flex;
     align-items: center;
     gap: 32px;
   }
 
   .connect-info {
-    flex: 1;
+    display: flex;
     margin-bottom: 0;
   }
 
   .connect-img {
-    width: 340px;
+    width: 704px;
     height: auto;
   }
 
   /* FOOTER */
-  .footer-wrap {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
   .footer-nav-list {
     flex-direction: row;
+  }
+
+  .footer-social-svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer-socials-list {
+    gap: 12px;
   }
 }
 
@@ -817,8 +875,27 @@ img[src*="snowy-peony-cluster"] {
 @media screen and (min-width: 1440px) {
   
   /* HEADER NAVIGATION */
-  .header-nav-list {
+  /* .header-nav-list {
     gap: 40px;
+  } */
+   .header-nav-list {
+    display: flex;
+    gap: 40px;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  /* .header-btn {
+    display: block;
+    margin: 0;
+  }  */
+
+  .header-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: 24px;
   }
 
   /* HERO */
@@ -832,9 +909,17 @@ img[src*="snowy-peony-cluster"] {
     gap: 80px;
   }
 
+  .about-img {
+    width: 600px;
+  }
+
   /* TOP SELLING */
   .bestsellers-list li:nth-child(3) {
     display: block;
+  }
+
+  .top-selling-img {
+    width: 405px;
   }
 
   /* BOUQUETS */
@@ -849,6 +934,9 @@ img[src*="snowy-peony-cluster"] {
 
   /* CONNECT */
   .connect-img {
-    width: 580px;
+    width: 1280px;
+    height: 720px;
   }
 }
+
+  
